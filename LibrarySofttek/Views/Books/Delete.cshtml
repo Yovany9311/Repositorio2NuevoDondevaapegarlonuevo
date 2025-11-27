@@ -1,0 +1,32 @@
+﻿@model LibrarySofttek.Domain.Book
+@{
+    ViewData["Title"] = "Eliminar Libro";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-danger text-white">
+            <h3 class="mb-0">🗑️ Eliminar Libro</h3>
+        </div>
+        <div class="card-body">
+            <p class="fw-bold">¿Estás seguro de que deseas eliminar este libro?</p>
+
+            <ul class="list-group">
+                <li class="list-group-item"><strong>📖 Título:</strong> @Model.Title</li>
+                <li class="list-group-item"><strong>📅 Año:</strong> @Model.Year</li>
+                <li class="list-group-item"><strong>📚 Género:</strong> @Model.Genre</li>
+                <li class="list-group-item"><strong>📖 Páginas:</strong> @Model.PageCount</li>
+                <li class="list-group-item"><strong>📝 Autor:</strong> @ViewBag.AuthorName</li>
+            </ul>
+
+            <form asp-action="DeleteConfirmed" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <div class="d-flex justify-content-between mt-3">
+                    <a asp-action="Index" class="btn btn-secondary">❌ Cancelar</a>
+                    <button type="submit" class="btn btn-danger">🗑️ Eliminar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

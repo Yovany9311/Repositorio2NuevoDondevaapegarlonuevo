@@ -1,0 +1,64 @@
+﻿@model IEnumerable<LibrarySofttek.Domain.Book>
+
+@{
+    ViewData["Title"] = "Lista de Libros";
+}
+
+<h2>📚 Lista de Libros</h2>
+
+<!-- Mensajes de éxito o error -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        <strong>✔️ Éxito:</strong> @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        <strong>❌ Error:</strong> @TempData["ErrorMessage"]
+    </div>
+}
+
+<a asp-action="Create" class="btn btn-primary">➕ Agregar Nuevo Libro</a>
+<a asp-area="" asp-controller="Authors" asp-action="Index" class="btn btn-secondary">📖 Ir a Autores</a>
+
+@if (!Model.Any())
+{
+    <p class="mt-3">⚠️ No hay libros disponibles.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Género</th>
+                <th>Año</th>
+                <th>Páginas</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Author.FullName</td>
+                    <td>@book.Genre</td>
+                    <td>@book.Year</td>
+                    <td>@book.PageCount</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@book.Id" class="btn btn-warning btn-sm">✏️ Editar</a>
+                        <a asp-action="Delete" asp-route-id="@book.Id" method="post" class="btn btn-danger btn-sm" class="d-inline">
+                            🗑️ Eliminar
+                           
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,64 @@
+﻿@model LibrarySofttek.Domain.Book
+@{
+    ViewData["Title"] = "Editar Libro";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-warning text-white">
+            <h3 class="mb-0">✏️ Editar Libro</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+
+                <!-- Título -->
+                <div class="mb-3">
+                    <label asp-for="Title" class="form-label">Título <span class="text-danger">*</span></label>
+                    <input asp-for="Title" class="form-control" required />
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <!-- Año -->
+                <div class="mb-3">
+                    <label asp-for="Year" class="form-label">Año <span class="text-danger">*</span></label>
+                    <input asp-for="Year" type="number" class="form-control" required />
+                    <span asp-validation-for="Year" class="text-danger"></span>
+                </div>
+
+                <!-- Género -->
+                <div class="mb-3">
+                    <label asp-for="Genre" class="form-label">Género <span class="text-danger">*</span></label>
+                    <input asp-for="Genre" class="form-control" required />
+                    <span asp-validation-for="Genre" class="text-danger"></span>
+                </div>
+
+                <!-- Páginas -->
+                <div class="mb-3">
+                    <label asp-for="PageCount" class="form-label">Número de Páginas <span class="text-danger">*</span></label>
+                    <input asp-for="PageCount" type="number" class="form-control" required />
+                    <span asp-validation-for="PageCount" class="text-danger"></span>
+                </div>
+
+                <!-- Autor -->
+                <div class="mb-3">
+                    <label asp-for="AuthorId" class="form-label">Autor <span class="text-danger">*</span></label>
+                    <select asp-for="AuthorId" asp-items="@(new SelectList(ViewBag.Authors, "Value", "Text", Model.AuthorId))" class="form-select" required>
+                        <option value="">Seleccione un autor</option>
+                    </select>
+                    <span asp-validation-for="AuthorId" class="text-danger"></span>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">❌ Cancelar</a>
+                    <button type="submit" class="btn btn-success">💾 Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

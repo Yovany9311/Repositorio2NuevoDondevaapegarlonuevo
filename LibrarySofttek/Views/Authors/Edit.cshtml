@@ -1,0 +1,84 @@
+﻿@model LibrarySofttek.Domain.Author
+@{
+    ViewData["Title"] = "Editar Autor";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-warning text-white d-flex align-items-center">
+            <i class="bi bi-pencil-square me-2"></i>
+            <h3 class="mb-0">✏️ Editar Autor</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" method="post" novalidate>
+                <!-- ID oculto -->
+                <input type="hidden" asp-for="Id" />
+
+                <!-- Nombre Completo -->
+                <div class="mb-3">
+                    <label asp-for="FullName" class="form-label">
+                        <i class="bi bi-person"></i> Nombre Completo <span class="text-danger">*</span>
+                    </label>
+                    <input asp-for="FullName" class="form-control" required minlength="3" maxlength="100" />
+                    <span asp-validation-for="FullName" class="text-danger"></span>
+                </div>
+
+                <!-- Fecha de Nacimiento -->
+                <div class="mb-3">
+                    <label asp-for="BirthDate" class="form-label">
+                        <i class="bi bi-calendar"></i> Fecha de Nacimiento <span class="text-danger">*</span>
+                    </label>
+                    <input asp-for="BirthDate" type="date" class="form-control" required />
+                    <span asp-validation-for="BirthDate" class="text-danger"></span>
+                </div>
+
+                <!-- Ciudad -->
+                <div class="mb-3">
+                    <label asp-for="City" class="form-label">
+                        <i class="bi bi-geo-alt"></i> Ciudad <span class="text-danger">*</span>
+                    </label>
+                    <input asp-for="City" class="form-control" required minlength="2" maxlength="50" />
+                    <span asp-validation-for="City" class="text-danger"></span>
+                </div>
+
+                <!-- Email -->
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">
+                        <i class="bi bi-envelope"></i> Correo Electrónico <span class="text-danger">*</span>
+                    </label>
+                    <input asp-for="Email" type="email" class="form-control" required />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <!-- Botones -->
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">
+                        🔙 Volver
+                    </a>
+                    <button type="submit" class="btn btn-warning">
+                        <i class="bi bi-save"></i> Guardar Cambios
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        (function () {
+            'use strict';
+            var forms = document.querySelectorAll('form');
+
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+}

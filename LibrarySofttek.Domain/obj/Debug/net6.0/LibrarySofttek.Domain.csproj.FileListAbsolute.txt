@@ -1,0 +1,12 @@
+C:\Users\DAVID CARDENAS\Source\Repos\LibrarySofttek\LibrarySofttek.Domain\bin\Debug\net6.0\LibrarySofttek.Domain.deps.json
+C:\Users\DAVID CARDENAS\Source\Repos\LibrarySofttek\LibrarySofttek.Domain\bin\Debug\net6.0\LibrarySofttek.Domain.dll
+C:\Users\DAVID CARDENAS\Source\Repos\LibrarySofttek\LibrarySofttek.Domain\bin\Debug\net6.0\LibrarySofttek.Domain.pdb
+C:\Users\DAVID CARDENAS\Source\Repos\LibrarySofttek\LibrarySofttek.Domain\obj\Debug\net6.0\LibrarySofttek.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\DAVID CARDENAS\Source\Repos\LibrarySofttek\LibrarySofttek.Domain\obj\Debug\net6.0\LibrarySofttek.Domain.AssemblyInfoInputs.cache
+C:\Users\DAVID CARDENAS\Source\Repos\LibrarySofttek\LibrarySofttek.Domain\obj\Debug\net6.0\LibrarySofttek.Domain.AssemblyInfo.cs
+C:\Users\DAVID CARDENAS\Source\Repos\LibrarySofttek\LibrarySofttek.Domain\obj\Debug\net6.0\LibrarySofttek.Domain.csproj.CoreCompileInputs.cache
+C:\Users\DAVID CARDENAS\Source\Repos\LibrarySofttek\LibrarySofttek.Domain\obj\Debug\net6.0\LibrarySofttek.Domain.sourcelink.json
+C:\Users\DAVID CARDENAS\Source\Repos\LibrarySofttek\LibrarySofttek.Domain\obj\Debug\net6.0\LibrarySofttek.Domain.dll
+C:\Users\DAVID CARDENAS\Source\Repos\LibrarySofttek\LibrarySofttek.Domain\obj\Debug\net6.0\refint\LibrarySofttek.Domain.dll
+C:\Users\DAVID CARDENAS\Source\Repos\LibrarySofttek\LibrarySofttek.Domain\obj\Debug\net6.0\LibrarySofttek.Domain.pdb
+C:\Users\DAVID CARDENAS\Source\Repos\LibrarySofttek\LibrarySofttek.Domain\obj\Debug\net6.0\ref\LibrarySofttek.Domain.dll

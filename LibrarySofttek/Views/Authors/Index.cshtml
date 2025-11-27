@@ -1,0 +1,37 @@
+﻿@model IEnumerable<LibrarySofttek.Domain.Author>
+
+@{
+    ViewData["Title"] = "Lista de Autores";
+}
+
+<h2 class="mb-4">Lista de Autores</h2>
+
+<a asp-action="Create" class="btn btn-primary">➕ Agregar Autor</a>
+<a asp-area="" asp-controller="Books" asp-action="Index" class="btn btn-secondary">Ir a Libros</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre Completo</th>
+            <th>Fecha de Nacimiento</th>
+            <th>Ciudad</th>
+            <th>Email</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var author in Model)
+        {
+            <tr>
+                <td>@author.FullName</td>
+                <td>@author.BirthDate.ToString("yyyy-MM-dd")</td>
+                <td>@author.City</td>
+                <td>@author.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@author.Id" class="btn btn-primary btn-sm">✏️ Editar</a>
+                    <a asp-action="Delete" asp-route-id="@author.Id" class="btn btn-danger btn-sm">🗑️ Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

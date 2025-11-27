@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Bienvenido a Library Softtek";
+}
+
+<div class="container text-center mt-5">
+    <h1 class="display-4">📚 Library Softtek</h1>
+    <p class="lead">Administra tus libros y autores de forma fácil y rápida.</p>
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h5 class="card-title">✍️ Administrar Autores</h5>
+                    <p class="card-text">Ver, agregar y gestionar autores en la biblioteca.</p>
+                    <a href="@Url.Action("Index", "Authors")" class="btn btn-primary">Ir a Autores</a>
+                    <a href="@Url.Action("Create", "Authors")" class="btn btn-success">Agregar Autor</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-lg">
+                <div class="card-body">
+                    <h5 class="card-title">📖 Administrar Libros</h5>
+                    <p class="card-text">Ver, agregar y gestionar libros en la biblioteca.</p>
+                    <a href="@Url.Action("Index", "Books")" class="btn btn-primary">Ir a Libros</a>
+                    <a href="@Url.Action("Create", "Books")" class="btn btn-success">Agregar Libro</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
